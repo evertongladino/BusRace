@@ -14,7 +14,6 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.FPSAnimator;
 import com.jogamp.opengl.util.awt.TextRenderer;
 
 
@@ -33,7 +32,6 @@ public class Renderizador extends MouseAdapter implements GLEventListener,
     private float lado = 0.46f;
     private float reverseLado;
     private double auxChao, auxPista;
-    private FPSAnimator animator;
 
     
     Font fonte = new Fonte().carregarFonte().deriveFont(Font.PLAIN, 40);
@@ -261,11 +259,10 @@ public class Renderizador extends MouseAdapter implements GLEventListener,
         if(reverseLado == movimentoXBus && andarObstaculo >= 51.5 && andarObstaculo <=57) {
             andarObstaculo = 0;
             incremento = 0;
-            JOptionPane.showMessageDialog(null ,"Game Over" + "\n" + "Pontuação: " + (pont*pontuacao));
-            System.out.println("Pontuação: " + (pont*pontuacao));
+            JOptionPane.showMessageDialog(null ,"Game Over" + "\n" + "PontuaÃ§Ã£o: " + (pont*pontuacao));
+            System.out.println("PontuaÃ§Ã£o: " + (pont*pontuacao));
             pontuacao = 0;
             pont = 0;
-            animator.stop();
         }
 
         return lado;
